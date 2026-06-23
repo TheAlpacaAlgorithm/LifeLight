@@ -44,12 +44,13 @@ const hotspots = [
 	h: 15,
   },
 	{
-	label: 'Deine gesammelten Spektren',
-	href: 'subsites/weitere-lampen.html',
-	x: 74,
-	y: 43,
-	w: 9,
-	h: 15,
+	label: 'Hier geht es zu deinem Lichtlabor',
+	href: 'subsites/deine-spektren.html',
+	visible: true,
+	x: 45,
+	y: 90,
+	w: 25,
+	h: 5,
   },
 ];
 
@@ -67,7 +68,7 @@ hotspotLayer.className = 'hotspot-layer';
 
 const hint = document.createElement('div');
 
-shell.append(image, hotspotLayer, hint);
+shell.append(image, hotspotLayer);
 app.replaceChildren(shell);
 
 const hotspotElements = hotspots.map((hotspot) => {
@@ -81,6 +82,13 @@ const hotspotElements = hotspots.map((hotspot) => {
   link.style.top = '0px';
   link.style.width = '0px';
   link.style.height = '0px';
+  // If the hotspot should be visible as a standard button, add the class and label text
+  if (hotspot.visible) {
+	link.classList.add('visible');
+	link.textContent = hotspot.label;
+	link.setAttribute('role', 'button');
+	link.dataset.label = '';
+  }
   hotspotLayer.appendChild(link);
   return { ...hotspot, element: link };
 });

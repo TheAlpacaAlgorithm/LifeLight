@@ -25,7 +25,7 @@ body {
     inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center center;
     user-select: none;
     -webkit-user-drag: none;
@@ -57,12 +57,40 @@ body {
     transform: scale(1.01);
 }
 
+/* Visible hotspot styled as a standard button */
+.hotspot.visible {
+    pointer-events: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: #fff;
+    background: linear-gradient(180deg, #16a909 0%, #0a7e0d 100%);
+    border-color: rgba(255,255,255,0.12);
+    box-shadow: 0 6px 18px rgba(2,132,199,0.28), inset 0 -2px 0 rgba(255,255,255,0.06);
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.5rem 0.9rem;
+    border-radius: 12px;
+    text-decoration: none;
+}
+
+.hotspot.visible:focus {
+    box-shadow: 0 0 0 4px rgba(2,132,199,0.25);
+    transform: translateY(-1px);
+}
+
+/* keep the textual tooltip only for non-visible hotspots */
+.hotspot:not(.visible)::after { opacity: 0; }
+.hotspot:not(.visible):hover::after,
+.hotspot:not(.visible):focus-visible::after { opacity: 1; }
+
 .hotspot::after {
     content: attr(data-label);
     position: absolute;
     left: 50%;
-    top: 100%;
-    transform: translate(-50%, 0.4rem);
+    bottom: 100%;
+    transform: translate(-50%, -0.4rem);
     padding: 0.35rem 0.55rem;
     border-radius: 999px;
     background: rgba(0, 0, 0, 0.65);
