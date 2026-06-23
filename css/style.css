@@ -12,6 +12,18 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.heading {
+    position: relative;
+    text-align: center;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    font-weight: 600;
+    background: rgba(0, 0, 0, 0.45);
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
+}
 .app-shell {
     position: relative;
     width: 100vw;
@@ -122,6 +134,18 @@ body {
     max-width: min(26rem, calc(100vw - 2rem));
 }
 
+.text-card {
+    position: fixed;      /* stays in place when scrolling */
+    top: 20px;            /* distance from top */
+    right: 200px;          /* distance from right */
+    width: 850px;
+    padding: 10px;
+    background: rgb(255 255 255 / 0.28);
+    border: 1px solid rgb(221 221 221 / 0);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
 .button {
   pointer-events: auto;
     display: inline-flex;
@@ -145,3 +169,69 @@ body {
         font-size: 0.85rem;
     }
 }
+
+.sun-spectrum-layout {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.25rem;
+    color: #fff;
+    margin-top: 1rem;
+  }
+
+  .sun-spectrum-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .sun-spectrum-card {
+    background: rgb(255 255 255 / 0.63);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+
+  .sun-spectrum-card h2 {
+    margin: 0 0 0.75rem;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .sun-spectrum-card img {
+    width: 100%;
+    height: min(52vh, 420px);
+    object-fit: contain;
+    border-radius: 8px;
+  }
+
+
+  .sun-spectrum-note {
+    margin: 0;
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.5;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 0.85rem 1rem;
+  }
+
+  @media (max-width: 900px) {
+    .sun-spectrum-layout {
+        padding: 1rem;
+    }
+
+    .sun-spectrum-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .sun-spectrum-card img {
+        height: min(38vh, 320px);
+    }
+  }
