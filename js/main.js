@@ -93,14 +93,17 @@ const hotspotElements = hotspots.map((hotspot) => {
   return { ...hotspot, element: link };
 });
 
-function fitCover(naturalWidth, naturalHeight, containerWidth, containerHeight) {
-  const scale = Math.max(containerWidth / naturalWidth, containerHeight / naturalHeight);
+function fitContain(naturalWidth, naturalHeight, containerWidth, containerHeight) {
+  // scale so the whole image fits inside the container
+  const scale = Math.min(containerWidth / naturalWidth, containerHeight / naturalHeight);
+  const width = naturalWidth * scale;
+  const height = naturalHeight * scale;
   return {
-	scale,
-	width: naturalWidth * scale,
-	height: naturalHeight * scale,
-	offsetX: (containerWidth - naturalWidth * scale) / 2,
-	offsetY: (containerHeight - naturalHeight * scale) / 2,
+    scale,
+    width,
+    height,
+    offsetX: (containerWidth - width) / 2,
+    offsetY: (containerHeight - height) / 2,
   };
 }
 
@@ -112,7 +115,7 @@ function layoutHotspots() {
 	return;
   }
 
-  const fitted = fitCover(naturalWidth, naturalHeight, containerWidth, containerHeight);
+   const fitted = fitContain(naturalWidth, naturalHeight, containerWidth, containerHeight);
 
   hotspotElements.forEach((hotspot) => {
 	const left = fitted.offsetX + (hotspot.x / 100) * fitted.width;
