@@ -44,7 +44,7 @@ const hotspots = [
 	h: 15,
   },
 	{
-	label: 'Hier geht es zu deinem Lichtlabor',
+	label: 'Hier geht es zur Auswertung',
 	href: 'subsites/deine-spektren.html',
 	visible: true,
 	x: 45,

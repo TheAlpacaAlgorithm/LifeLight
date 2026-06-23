@@ -3,34 +3,65 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Deine gesammelten Spektren</title>
+  <title>Spektrum von Wärmestrahlung</title>
+
+  <!-- Optional: einfaches CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Chart.js über CDN (zeigt das Linien-Diagramm) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1"></script>
   <style>
-    html, body { margin: 0; width: 100%; height: 100%; }
     body {
-      display: grid;
-      place-items: center;
-      background: #0b0b0b;
-      color: #fff;
-      font-family: Arial, Helvetica, sans-serif;
-      padding: 2rem;
-      box-sizing: border-box;
+        background-color: black;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 20px;
     }
-    .card {
-      max-width: 42rem;
-      padding: 1.5rem;
-      border-radius: 1rem;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
     }
-    a { color: #7fd0ff; }
+    canvas {
+      border-radius: 10px;
+    }
   </style>
 </head>
 <body>
-  <section class="card">
-    <h1>Deine gesammelten Spektren</h1>
-    <p>Hier entsteht eine Application zum Zusammenstellen des Spektrums von LifeLight.</p>
-    <p><a href="../index.html">Zurück zur Übersicht</a></p>
-  </section>
+  <div class="container">
+
+    <div class="controls temperature-control">
+      <div style="width: 70%;">
+      <label for="temperatureSlider" style="color: white;">Temperatur:</label>
+      <input id="temperatureSlider" type="range" min="-273" max="20000" step="1" value="6000" style="width: 30%; vertical-align: center;" />
+      <output id="temperatureValue" for="temperatureSlider" style="color: white; min-width: 90px; display: inline-block; text-align: left;">5800 °C</output></div>
+      <div><label for="maxBrightnessCheckbox" style="color: white;">erhöhe die Helligkeit:</label>
+      <input id="maxBrightnessCheckbox" type="checkbox" /></div>
+    </div>
+
+    <!-- Oberer Bereich: Canvas für das Liniendiagramm -->
+    <canvas
+        id="spectrumChart"
+        width="1000"
+        height="300">
+    </canvas>
+      <div>
+        <div style="display:flex; align-items:center; gap:12px; justify-content:flex-start;">
+          <span>Zoome, indem du ein Rechteck ziehst.</span>
+          <button id="resetZoomBtn">Reset</button>
+        </div>
+      </div>
+  </div>
+
+  <!-- Haupt-JS (kommt in einem nächsten Schritt) -->
+  <script type="module" src="../js/deine-spektren.js"></script>
+  <div>
+    <div style="display:flex; align-items:center; gap:12px; justify-content:flex-start;">
+      <a href="../index.html" class="button">Zurück ins Lichtlabor</a>
+    </div>
+  </div>
 </body>
 </html>
-
