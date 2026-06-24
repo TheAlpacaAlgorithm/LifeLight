@@ -163,6 +163,76 @@ body {
     text-decoration: none;
 }
 
+.spectrum-choice-panel {
+    width: min(100%, 960px);
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.spectrum-choice-panel__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.85rem;
+}
+
+.spectrum-choice-panel__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.85rem;
+}
+
+.spectrum-choice {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    text-align: left;
+    padding: 0.9rem 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    cursor: pointer;
+    transition: transform 140ms ease, background 140ms ease, opacity 140ms ease;
+}
+
+.spectrum-choice:hover:not(:disabled) {
+    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.spectrum-choice__label {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.spectrum-choice__description {
+    font-size: 0.92rem;
+    line-height: 1.4;
+    opacity: 0.88;
+}
+
+.spectrum-choice__lock {
+    align-self: flex-start;
+    margin-top: 0.2rem;
+    padding: 0.22rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    background: rgba(0, 0, 0, 0.28);
+}
+
+.spectrum-choice--locked {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.spectrum-choice--selected {
+    border-color: rgba(22, 169, 9, 0.85);
+    box-shadow: 0 0 0 2px rgba(22, 169, 9, 0.18);
+}
+
 @media (max-width: 700px) {
     .hint {
         right: 1rem;
@@ -205,7 +275,7 @@ body {
 
   .sun-spectrum-card img {
     width: 100%;
-    height: min(52vh, 420px);
+    height: min(52vh, 300px);
     object-fit: contain;
     border-radius: 8px;
   }
@@ -233,5 +303,44 @@ body {
 
     .sun-spectrum-card img {
         height: min(38vh, 320px);
+    }
+  }
+
+.collect-spectrum-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0 24px 1rem;
+    padding: 0.9rem 1rem;
+    border-radius: 12px;
+    background: rgb(18 79 15 / 0.85);
+    border: 0px solid rgb(255 0 0 / 0.14);
+    color: #fff;
+  }
+
+  .collect-spectrum-bar__copy {
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .collect-spectrum-button {
+    pointer-events: auto;
+    appearance: none;
+    border: none;
+  }
+
+  .collect-spectrum-button[disabled] {
+    opacity: 0.65;
+    cursor: not-allowed;
+    color: #313131;
+      background: #0a7e0d;
+  }
+
+  @media (max-width: 700px) {
+    .collect-spectrum-bar {
+      margin: 0 1rem 1rem;
+      flex-direction: column;
+      align-items: stretch;
     }
   }

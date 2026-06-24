@@ -1,3 +1,5 @@
+import { getSelectedSpectrum, isSpectrumCollected, setSelectedSpectrum } from './spectrum-progress.js';
+
 if (window.Chart && window.ChartZoom) {
   Chart.register(ChartZoom);
 } else {
@@ -14,6 +16,95 @@ const PLANCK_C = 299792458;
 const PLANCK_K = 1.380649e-23;
 
 let spectrumChart = null;
+const spectrumOptions = [
+  {
+    id: 'sonnenlicht',
+    label: 'Sonnenlicht',
+    description: 'Freischaltbar, sobald das Sonnenspektrum gesammelt wurde.',
+  },
+  {
+    id: 'placeholder-1',
+    label: 'Weitere Spektren',
+    description: 'Weitere Auswahlmöglichkeiten können später ergänzt werden.',
+  },
+];
+
+function renderSpectrumOption(option) {
+  const collected = isSpectrumCollected(option.id);
+  const selected = getSelectedSpectrum() === option.id;
+  const locked = option.id === 'sonnenlicht' ? !collected : false;
+
+  return `
+    <button
+      type="button"
+      class="spectrum-choice ${locked ? 'spectrum-choice--locked' : ''} ${selected ? 'spectrum-choice--selected' : ''}"
+      data-spectrum-id="${option.id}"
+      ${locked ? 'disabled aria-disabled="true"' : ''}
+    >
+      <span class="spectrum-choice__label">${option.label}</span>
+      <span class="spectrum-choice__description">${option.description}</span>
+      ${locked ? '<span class="spectrum-choice__lock">Gesperrt</span>' : '<span class="spectrum-choice__lock">Auswählen</span>'}
+    </button>
+  `;
+}
+
+function syncSpectrumChoiceStyles() {
+  document.querySelectorAll('.spectrum-choice').forEach((button) => {
+    const spectrumId = button.getAttribute('data-spectrum-id');
+    const locked = spectrumId === 'sonnenlicht' ? !isSpectrumCollected('sonnenlicht') : false;
+    const selected = getSelectedSpectrum() === spectrumId;
+    button.classList.toggle('spectrum-choice--locked', locked);
+    button.classList.toggle('spectrum-choice--selected', selected);
+    button.disabled = locked;
+    button.setAttribute('aria-disabled', locked ? 'true' : 'false');
+    const lockLabel = button.querySelector('.spectrum-choice__lock');
+    if (lockLabel) {
+      lockLabel.textContent = locked ? 'Gesperrt' : 'Auswählen';
+    }
+  });
+}
+
+function buildSpectrumOptionsUI() {
+  const container = document.querySelector('.controls.temperature-control');
+  if (!container) return;
+
+  const wrapper = document.createElement('div');
+  wrapper.className = 'spectrum-choice-panel';
+  wrapper.innerHTML = `
+    <div class="spectrum-choice-panel__title">Spektrenauswahl</div>
+    <div class="spectrum-choice-panel__grid">
+      ${spectrumOptions.map(renderSpectrumOption).join('')}
+    </div>
+  `;
+
+  container.insertAdjacentElement('afterend', wrapper);
+
+  wrapper.addEventListener('click', (event) => {
+    const button = event.target.closest('.spectrum-choice');
+    if (!button || button.disabled) return;
+
+    const spectrumId = button.getAttribute('data-spectrum-id');
+    setSelectedSpectrum(spectrumId);
+    syncSpectrumChoiceStyles();
+  });
+
+  syncSpectrumChoiceStyles();
+}
+
+function initializeSpectrumOptions() {
+  if (document.querySelector('.spectrum-choice-panel')) {
+    syncSpectrumChoiceStyles();
+    return;
+  }
+
+  buildSpectrumOptionsUI();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initializeSpectrumOptions, { once: true });
+} else {
+  initializeSpectrumOptions();
+}
 
 function wavelengthToRGB(wavelength) {
   let R = 0, G = 0, B = 0, alpha = 1;
