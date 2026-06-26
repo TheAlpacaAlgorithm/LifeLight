@@ -20,12 +20,12 @@ const spectrumOptions = [
   {
     id: 'sonnenlicht',
     label: 'Sonnenlicht',
-    description: 'Freischaltbar, sobald das Sonnenspektrum gesammelt wurde.',
+    description: '',
   },
   {
     id: 'placeholder-1',
     label: 'Weitere Spektren',
-    description: 'Weitere Auswahlmöglichkeiten können später ergänzt werden.',
+    description: '',
   },
 ];
 
