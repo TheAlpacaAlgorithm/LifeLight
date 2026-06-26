@@ -135,15 +135,31 @@ body {
 }
 
 .text-card {
-    position: fixed;      /* stays in place when scrolling */
-    top: 20px;            /* distance from top */
-    right: 200px;          /* distance from right */
-    width: 850px;
-    padding: 10px;
+    position: fixed;
+    top: clamp(1rem, 2vw, 1.5rem);
+    right: clamp(1rem, 2vw, 1.5rem);
+    z-index: 5;
+    box-sizing: border-box;
+    width: min(42vw, 850px);
+    max-width: calc(100vw - 2rem);
+    max-height: calc(100vh - 2rem);
+    overflow: auto;
+    padding: clamp(0.75rem, 1.2vw, 1rem);
     background: rgb(255 255 255 / 0.28);
     border: 1px solid rgb(221 221 221 / 0);
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    backdrop-filter: blur(4px);
+    font-size: clamp(0.95rem, 0.8vw + 0.65rem, 1.1rem);
+    line-height: 1.45;
+}
+
+.text-card h3 {
+    margin: 0 0 0.4rem;
+}
+
+.text-card p {
+    margin: 0;
 }
 
 .button {
@@ -238,6 +254,13 @@ body {
         right: 1rem;
         font-size: 0.85rem;
     }
+
+    .text-card {
+        top: 1rem;
+        right: 1rem;
+        width: min(calc(100vw - 2rem), 32rem);
+        max-width: calc(100vw - 2rem);
+    }
 }
 
 .sun-spectrum-layout {
@@ -315,7 +338,7 @@ body {
     padding: 0.9rem 1rem;
     border-radius: 12px;
     background: rgb(18 79 15 / 0.85);
-    border: 0px solid rgb(255 0 0 / 0.14);
+    border: 0 solid rgb(255 0 0 / 0.14);
     color: #fff;
   }
 
