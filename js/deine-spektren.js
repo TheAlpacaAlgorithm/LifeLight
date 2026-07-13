@@ -43,7 +43,7 @@ function renderSpectrumOption(option) {
     >
       <span class="spectrum-choice__label">${option.label}</span>
       <span class="spectrum-choice__description">${option.description}</span>
-      ${locked ? '<span class="spectrum-choice__lock">Gesperrt</span>' : '<span class="spectrum-choice__lock">Auswählen</span>'}
+      ${locked ? '<span class="spectrum-choice__lock">noch nicht gesammelt</span>' : '<span class="spectrum-choice__lock">auswählen</span>'}
     </button>
   `;
 }
@@ -59,7 +59,7 @@ function syncSpectrumChoiceStyles() {
     button.setAttribute('aria-disabled', locked ? 'true' : 'false');
     const lockLabel = button.querySelector('.spectrum-choice__lock');
     if (lockLabel) {
-      lockLabel.textContent = locked ? 'Gesperrt' : 'Auswählen';
+      lockLabel.textContent = locked ? 'noch nicht gesammelt' : 'auswählen';
     }
   });
 }

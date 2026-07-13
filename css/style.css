@@ -94,6 +94,12 @@ body {
     transform: translateY(-1px);
 }
 
+.hotspot.visible::after {
+    content: none;
+    opacity: 0;
+    pointer-events: none;
+}
+
 /* keep the textual tooltip only for non-visible hotspots */
 .hotspot:not(.visible)::after { opacity: 0; }
 .hotspot:not(.visible):hover::after,
