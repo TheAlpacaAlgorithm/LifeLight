@@ -1,25 +1,33 @@
+/* ============================================
+   LICHTLABOR – Globale Stylesheets
+   ============================================ */
+
+/* --- 1. Reset & Basis ------------------------------------------ */
+
+/* Scrollverhalten: 'auto' statt 'scroll' vermeidet unnötige Scrollbars */
 html {
-    overflow: scroll;
+    overflow: auto;
 }
+
 body {
     width: 100%;
     height: 100%;
     margin: 0;
-}
-
-body {
-    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
     background: #000;
     color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
-#starCanvas {
-    background: black;
-    border-radius: 10px;
-    z-index: 800;
-    display: none
+/* Lab-Seiten haben keine Scrollbars (volle Höhe) */
+body:has(.app-shell) {
+    overflow: hidden;
 }
+
+/* Alternative ohne :has() für ältere Browser:
+   Verwende <body class="lab"> auf entsprechenden Seiten */
+
+
+/* --- 2. Typografie --------------------------------------------- */
 
 .heading {
     position: relative;
@@ -33,6 +41,10 @@ body {
     padding: 0.5rem 1rem;
     border-radius: 0.75rem;
 }
+
+
+/* --- 3. App-Shell (Hotspot-Ansichten) ------------------------- */
+
 .app-shell {
     position: relative;
     width: 100vw;
@@ -58,6 +70,7 @@ body {
     inset: 0;
 }
 
+/* Unsichtbare Hotspots (Hover/Focus zeigt Tooltip) */
 .hotspot {
     position: absolute;
     display: block;
@@ -67,7 +80,10 @@ body {
     text-decoration: none;
     cursor: pointer;
     outline: none;
-    transition: background-color 140ms ease, border-color 140ms ease, box-shadow 140ms ease, transform 140ms ease;
+    transition: background-color 140ms ease,
+                border-color 140ms ease,
+                box-shadow 140ms ease,
+                transform 140ms ease;
 }
 
 .hotspot:hover,
@@ -78,7 +94,7 @@ body {
     transform: scale(1.01);
 }
 
-/* Visible hotspot styled as a standard button */
+/* Sichtbare Hotspots (als Standard-Buttons gestylt) */
 .hotspot.visible {
     pointer-events: auto;
     display: inline-flex;
@@ -87,8 +103,9 @@ body {
     gap: 0.5rem;
     color: #fff;
     background: linear-gradient(180deg, #16a909 0%, #0a7e0d 100%);
-    border-color: rgba(255,255,255,0.12);
-    box-shadow: 0 6px 18px rgba(2,132,199,0.28), inset 0 -2px 0 rgba(255,255,255,0.06);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 6px 18px rgba(2, 132, 199, 0.28),
+                inset 0 -2px 0 rgba(255, 255, 255, 0.06);
     font-weight: 600;
     font-size: 1.1rem;
     padding: 0.5rem 0.9rem;
@@ -97,7 +114,7 @@ body {
 }
 
 .hotspot.visible:focus {
-    box-shadow: 0 0 0 4px rgba(2,132,199,0.25);
+    box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.25);
     transform: translateY(-1px);
 }
 
@@ -107,12 +124,8 @@ body {
     pointer-events: none;
 }
 
-/* keep the textual tooltip only for non-visible hotspots */
-.hotspot:not(.visible)::after { opacity: 0; }
-.hotspot:not(.visible):hover::after,
-.hotspot:not(.visible):focus-visible::after { opacity: 1; }
-
-.hotspot::after {
+/* Tooltips für nicht-sichtbare Hotspots */
+.hotspot:not(.visible)::after {
     content: attr(data-label);
     position: absolute;
     left: 50%;
@@ -130,10 +143,13 @@ body {
     transition: opacity 140ms ease;
 }
 
-.hotspot:hover::after,
-.hotspot:focus-visible::after {
+.hotspot:not(.visible):hover::after,
+.hotspot:not(.visible):focus-visible::after {
     opacity: 1;
 }
+
+
+/* --- 4. Info-Hinweise ----------------------------------------- */
 
 .hint {
     position: absolute;
@@ -149,6 +165,9 @@ body {
     max-width: min(26rem, calc(100vw - 2rem));
 }
 
+
+/* --- 5. Text-Karten (Erklärboxen) ---------------------------- */
+
 .text-card {
     position: fixed;
     top: clamp(1rem, 2vw, 1.5rem);
@@ -163,7 +182,7 @@ body {
     background: rgb(255 255 255 / 0.28);
     border: 1px solid rgb(221 221 221 / 0);
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(4px);
     font-size: clamp(0.95rem, 0.8vw + 0.65rem, 1.1rem);
     line-height: 1.45;
@@ -177,22 +196,29 @@ body {
     margin: 0;
 }
 
+
+/* --- 6. Buttons (Generisch) ----------------------------------- */
+
 .button {
-  pointer-events: auto;
+    pointer-events: auto;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
     color: #fff;
     background: linear-gradient(180deg, #16a909 0%, #0a7e0d 100%);
-    border-color: rgba(255,255,255,0.12);
-    box-shadow: 0 6px 18px rgba(2,132,199,0.28), inset 0 -2px 0 rgba(255,255,255,0.06);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 6px 18px rgba(2, 132, 199, 0.28),
+                inset 0 -2px 0 rgba(255, 255, 255, 0.06);
     font-weight: 600;
     font-size: 1.1rem;
     padding: 0.5rem 0.9rem;
     border-radius: 12px;
     text-decoration: none;
 }
+
+
+/* --- 7. Spektrum-Auswahl-Panel ------------------------------- */
 
 .spectrum-choice-panel {
     width: min(100%, 960px);
@@ -226,7 +252,9 @@ body {
     background: rgba(255, 255, 255, 0.12);
     color: #fff;
     cursor: pointer;
-    transition: transform 140ms ease, background 140ms ease, opacity 140ms ease;
+    transition: transform 140ms ease,
+                background 140ms ease,
+                opacity 140ms ease;
 }
 
 .spectrum-choice:hover:not(:disabled) {
@@ -264,19 +292,8 @@ body {
     box-shadow: 0 0 0 2px rgba(22, 169, 9, 0.18);
 }
 
-@media (max-width: 700px) {
-    .hint {
-        right: 1rem;
-        font-size: 0.85rem;
-    }
 
-    .text-card {
-        top: 1rem;
-        right: 1rem;
-        width: min(calc(100vw - 2rem), 32rem);
-        max-width: calc(100vw - 2rem);
-    }
-}
+/* --- 8. Sonnenlicht-Spektrum-Layout -------------------------- */
 
 .sun-spectrum-layout {
     box-sizing: border-box;
@@ -289,37 +306,36 @@ body {
     gap: 1.25rem;
     color: #fff;
     margin-top: 1rem;
-  }
+}
 
-  .sun-spectrum-grid {
+.sun-spectrum-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.5rem;
     align-items: start;
-  }
+}
 
-  .sun-spectrum-card {
+.sun-spectrum-card {
     background: rgb(255 255 255 / 0.63);
     border: 2px solid rgba(255, 255, 255, 0.15);
     border-radius: 12px;
     padding: 1rem;
-  }
+}
 
-  .sun-spectrum-card h2 {
+.sun-spectrum-card h2 {
     margin: 0 0 0.75rem;
     font-size: 1.2rem;
     text-align: center;
-  }
+}
 
-  .sun-spectrum-card img {
+.sun-spectrum-card img {
     width: 100%;
     height: min(52vh, 300px);
     object-fit: contain;
     border-radius: 8px;
-  }
+}
 
-
-  .sun-spectrum-note {
+.sun-spectrum-note {
     margin: 0;
     text-align: left;
     font-size: 1rem;
@@ -327,22 +343,10 @@ body {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     padding: 0.85rem 1rem;
-  }
+}
 
-  @media (max-width: 900px) {
-    .sun-spectrum-layout {
-        padding: 1rem;
-    }
 
-    .sun-spectrum-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .sun-spectrum-card img {
-        height: min(38vh, 320px);
-    }
-  }
+/* --- 9. Spektrum-Sammel-Leiste -------------------------------- */
 
 .collect-spectrum-bar {
     display: flex;
@@ -355,30 +359,69 @@ body {
     background: rgb(18 79 15 / 0.85);
     border: 0 solid rgb(255 0 0 / 0.14);
     color: #fff;
-  }
+}
 
-  .collect-spectrum-bar__copy {
+.collect-spectrum-bar__copy {
     margin: 0;
     line-height: 1.4;
-  }
+}
 
-  .collect-spectrum-button {
+.collect-spectrum-button {
     pointer-events: auto;
     appearance: none;
     border: none;
-  }
+}
 
-  .collect-spectrum-button[disabled] {
+.collect-spectrum-button[disabled] {
     opacity: 0.65;
     cursor: not-allowed;
     color: #313131;
-      background: #0a7e0d;
-  }
+    background: #0a7e0d;
+}
 
-  @media (max-width: 700px) {
-    .collect-spectrum-bar {
-      margin: 0 1rem 1rem;
-      flex-direction: column;
-      align-items: stretch;
+
+/* ============================================
+   MEDIA QUERIES – Responsive Anpassungen
+   ============================================ */
+
+@media (max-width: 900px) {
+    .sun-spectrum-layout {
+        padding: 1rem;
     }
-  }
+
+    .sun-spectrum-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .sun-spectrum-card img {
+        height: min(38vh, 320px);
+    }
+}
+
+@media (max-width: 700px) {
+    .hint {
+        right: 1rem;
+        font-size: 0.85rem;
+    }
+
+    .text-card {
+        top: 1rem;
+        right: 1rem;
+        width: min(calc(100vw - 2rem), 32rem);
+        max-width: calc(100vw - 2rem);
+    }
+
+    .collect-spectrum-bar {
+        margin: 0 1rem 1rem;
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+#starCanvas {
+    background: black;
+    border-radius: 10px;
+    z-index: 800;
+    display: none
+}
