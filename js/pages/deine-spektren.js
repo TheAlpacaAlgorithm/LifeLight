@@ -1,4 +1,4 @@
-import { getSelectedSpectrum, isSpectrumCollected, setSelectedSpectrum } from './spectrum-progress.js';
+import { getSelectedSpectrum, isSpectrumCollected, setSelectedSpectrum } from '../spectrum-progress.js';
 
 if (window.Chart && window.ChartZoom) {
   Chart.register(ChartZoom);
