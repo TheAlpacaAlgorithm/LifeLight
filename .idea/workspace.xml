@@ -8,9 +8,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19fd556a-a7ab-46c9-bf80-3de97fa0c06b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilotDiffState.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/hotspot-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/hotspot-view.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/pages/leuchtstoff.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/pages/leuchtstoff.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/pages/leuchtstoff_spektrum.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/pages/leuchtstoff_spektrum.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/pages/sonnenlicht.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/pages/sonnenlicht.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subsites/leuchtstoffroehren.html" beforeDir="false" afterPath="$PROJECT_DIR$/subsites/leuchtstoffroehren.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subsites/sonnenlicht.html" beforeDir="false" afterPath="$PROJECT_DIR$/subsites/sonnenlicht.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

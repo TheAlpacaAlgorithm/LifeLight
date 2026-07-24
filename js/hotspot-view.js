@@ -1,12 +1,3 @@
-/**
- * Erstellt eine interaktive Hotspot-Ansicht auf einem Bild.
- *
- * @param {Object} config
- * @param {string} config.mountSelector  – CSS-Selektor des Mount-Punkts (z. B. '#app')
- * @param {string} config.imageSrc        – Pfad zum Hintergrundbild
- * @param {string} config.imageAlt         – Alt-Text für das Bild
- * @param {Array}  config.hotspots         – Array von Hotspot-Definitionen
- */
 export function createHotspotView(config) {
   const {
     mountSelector,
@@ -39,30 +30,43 @@ export function createHotspotView(config) {
 
   // --- Hotspot-Elemente erzeugen ---
   const hotspotElements = hotspots.map((hotspot) => {
-    const link = document.createElement('a');
-    link.className = 'hotspot';
-    link.href = hotspot.href;
-    link.setAttribute('aria-label', hotspot.label);
-    link.title = hotspot.label;
-    link.style.left = '0px';
-    link.style.top = '0px';
-    link.style.width = '0px';
-    link.style.height = '0px';
+    let element;
 
-    if (hotspot.visible) {
-      link.classList.add('visible');
-      link.textContent = hotspot.label;
-      link.setAttribute('role', 'button');
-      // data-label leeren lassen, damit kein Tooltip erscheint
+    if (hotspot.textcard) {
+      // Text-Card Hotspot
+      element = document.createElement('div');
+      element.className = 'text-card';
+      element.innerHTML = hotspot.textcard.content || '<p>' + hotspot.label + '</p>';
+      element.style.position = 'absolute';
+      element.style.zIndex = '5';
+      element.style.left = '0px';
+      element.style.top = '0px';
     } else {
-      link.dataset.label = hotspot.label;
+      // Normaler Hotspot (visible oder invisible)
+      element = document.createElement('a');
+      element.className = 'hotspot';
+      element.href = hotspot.href;
+      element.setAttribute('aria-label', hotspot.label);
+      element.title = hotspot.label;
+      element.style.left = '0px';
+      element.style.top = '0px';
+      element.style.width = '0px';
+      element.style.height = '0px';
+
+      if (hotspot.visible) {
+        element.classList.add('visible');
+        element.textContent = hotspot.label;
+        element.setAttribute('role', 'button');
+      } else {
+        element.dataset.label = hotspot.label;
+      }
     }
 
-    hotspotLayer.appendChild(link);
-    return { ...hotspot, element: link };
+    hotspotLayer.appendChild(element);
+    return { ...hotspot, element };
   });
 
-  // --- Layout-Logik ---
+  // --- Layout-Logik (identisch für beide Typen) ---
   function fitContain(naturalWidth, naturalHeight, containerWidth, containerHeight) {
     const scale = Math.min(
       containerWidth / naturalWidth,
@@ -102,8 +106,14 @@ export function createHotspotView(config) {
 
       hotspot.element.style.left = `${left}px`;
       hotspot.element.style.top = `${top}px`;
-      hotspot.element.style.width = `${width}px`;
-      hotspot.element.style.height = `${height}px`;
+
+      if (hotspot.textcard) {
+        hotspot.element.style.maxWidth = `${width}px`;
+        hotspot.element.style.maxHeight = '40vh';
+      } else {
+        hotspot.element.style.width = `${width}px`;
+        hotspot.element.style.height = `${height}px`;
+      }
     });
   }
 
@@ -116,7 +126,6 @@ export function createHotspotView(config) {
 
   window.addEventListener('resize', layoutHotspots);
 
-  // Öffentliche API zurückgeben (für spätere Erweiterung)
   return {
     refresh: layoutHotspots,
     destroy() {

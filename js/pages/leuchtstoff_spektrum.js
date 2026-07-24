@@ -1,2 +1,2 @@
-import { setupSpectrumCollection } from './spektrum-collect.js';
+import { setupSpectrumCollection } from '../spectrum-collect.js';
 setupSpectrumCollection('leuchtstoff');
