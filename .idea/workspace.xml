@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BackgroundAgentGlobalSettings">
+    <option name="selectedModelId" value="auto" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="19fd556a-a7ab-46c9-bf80-3de97fa0c06b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/pages/leuchtstoff.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/pages/leuchtstoff.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_C:/Users/richa/Documents/00 - Wichtige Dokumente/00-Uni/Didaktik/Offene Uni/Apps/LifeLightSeite" value="3Gr7XxcaTmRf4yK11jyl3XyePeQ" />
+      <entry key="_P:/00 - Wichtige Dokumente/00-Uni/Didaktik/Offene Uni/Apps/LifeLightSeite" value="3FJDr5cCGIXhIgBBmoYbgJeXqt2" />
+    </persistenceIdMap>
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="26" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;TheAlpacaAlgorithm&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:TheAlpacaAlgorithm/LifeLight.git&quot;,
+    &quot;accountId&quot;: &quot;4b3e8cef-8d66-4047-b747-ea6157963f64&quot;
+  }
+}</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0066421911800854" />
+      <entry key="MS500" value="1.770461361438076" />
+      <entry key="S2" value="5.241180092285214" />
+      <entry key="S5" value="10.179137919550135" />
+      <entry key="S10" value="16.261399004772922" />
+      <entry key="S30" value="25.368179462754412" />
+      <entry key="S60" value="29.66730989087421" />
+      <entry key="M2" value="35.521683635961594" />
+      <entry key="M5" value="53.435205307984354" />
+      <entry key="M10" value="83.7444917453864" />
+      <entry key="M15" value="107.94979591327754" />
+      <entry key="M30" value="150.18962682514012" />
+      <entry key="H1" value="182.96638419185604" />
+      <entry key="H2" value="203.66376567790914" />
+      <entry key="H4" value="215.33470050835507" />
+      <entry key="D1" value="225.8161227868137" />
+      <entry key="W1" value="227.68617600503464" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="0.0" />
+      <entry key="M5" value="0.0" />
+      <entry key="M10" value="0.0" />
+      <entry key="M15" value="0.0" />
+      <entry key="M30" value="0.0" />
+      <entry key="H1" value="0.0" />
+      <entry key="H2" value="0.0" />
+      <entry key="H4" value="0.0" />
+      <entry key="D1" value="0.0" />
+      <entry key="W1" value="0.0" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.09748150431844577" />
+      <entry key="MS500" value="1.1677609473538755" />
+      <entry key="S2" value="4.952190742801322" />
+      <entry key="S5" value="10.02704238140737" />
+      <entry key="S10" value="16.163936554625437" />
+      <entry key="S30" value="25.32475038096838" />
+      <entry key="S60" value="29.643432250687532" />
+      <entry key="M2" value="35.50902657866984" />
+      <entry key="M5" value="53.429509174389715" />
+      <entry key="M10" value="83.74071128962883" />
+      <entry key="M15" value="107.9466229102209" />
+      <entry key="M30" value="150.1873707597772" />
+      <entry key="H1" value="182.96496572422853" />
+      <entry key="H2" value="203.66295948012586" />
+      <entry key="H4" value="215.33426929859442" />
+      <entry key="D1" value="225.8160466384018" />
+      <entry key="W1" value="227.68616501661458" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3FJDr5cCGIXhIgBBmoYbgJeXqt2" />
+  <component name="ProjectSessionTemplates">
+    <option name="panelTemplate">
+      <template>
+        <option name="modeId" value="Agent" />
+        <option name="model">
+          <model>
+            <option name="modelType" value="builtin_id" />
+            <option name="modelValue" value="auto" />
+          </model>
+        </option>
+        <option name="targetType" value="LOCAL" />
+      </template>
+    </option>
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.get_spectrum.executor": "Run",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "copilot.chat.legacySessionMetadata.migrated": "true",
+    "git-widget-placeholder": "main",
+    "javascript.preferred.runtime.type.id": "node",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "C:/Users/richa/Documents/00 - Wichtige Dokumente/00-Uni/Didaktik/Offene Uni/Apps/LifeLightSeite",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "ml.llm.AcpAgentsConfigurable",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="P:\00 - Wichtige Dokumente\00-Uni\Didaktik\Offene Uni\Apps\LifeLightSeite\src\data" />
+      <recent name="P:\00 - Wichtige Dokumente\00-Uni\Didaktik\Offene Uni\Apps\LifeLightSeite\images" />
+      <recent name="P:\00 - Wichtige Dokumente\00-Uni\Didaktik\Offene Uni\Apps\LifeLightSeite\subsites" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="P:\00 - Wichtige Dokumente\00-Uni\Didaktik\Offene Uni\Apps\LifeLightSeite\js\pages" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-c59985aa861c-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.24374.152" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="19fd556a-a7ab-46c9-bf80-3de97fa0c06b" name="Changes" comment="" />
+      <created>1781784474922</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1781784474922</updated>
+      <workItem from="1782298818123" duration="323000" />
+      <workItem from="1783956303577" duration="4721000" />
+      <workItem from="1784807809184" duration="1254000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
