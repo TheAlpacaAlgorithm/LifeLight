@@ -425,3 +425,8 @@ body:has(.app-shell) {
     z-index: 800;
     display: none
 }
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
