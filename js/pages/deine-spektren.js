@@ -19,51 +19,61 @@ const spectrumOptions = [
     id: 'sonnenlicht',
     label: 'Sonnenlicht',
     csv: '../../src/data/sun_2.csv',
+    color: '#FFD700'  // Gold - volle Sonne
   },
   {
     id: 'leuchtstoff',
     label: 'Leuchtstoffröhre',
     csv: '../../src/data/leuchtstoff.csv',
+    color: '#ffffff'  // Kühlweiß/Cyan
   },
   {
     id: 'gluehlampe',
     label: 'Glühlampe',
     csv: '../../src/data/glueh.csv',
+    color: '#ffb96f'  // Warmes Orange
   },
   {
     id: 'led-warm',
     label: 'LED-Lampe (warmweiß)',
     csv: '../../src/data/led_warm.csv',
+    color: '#ff4500'  // Weicheres Orange als Glühlampe
   },
   {
     id: 'led-kalt',
     label: 'LED-Lampe (kaltweiß)',
     csv: '../../src/data/led_cold.csv',
+    color: '#76deff'  // Kühlweiß mit leichtem Blaustich
   },
   {
     id: 'helium',
     label: 'Heliumlampe',
     csv: '../../src/data/helium.csv',
+    color: '#FF9ECC'  // Rosa/Pink - typische Helium-Gasentladung
   },
   {
     id: 'wasserstoff',
     label: 'Wasserstofflampe',
     csv: '../../src/data/hydrogen.csv',
+    color: '#ed48f8'  // Violett/Rosa - Balmer-Serie (H-alpha rot, H-beta blau/grün)
   },
   {
     id: 'neon',
     label: 'Neonlampe',
     csv: '../../src/data/neon.csv',
+    color: '#FF6B35'  // Klassisches Rot-Orange
   },
   {
     id: 'natrium',
     label: 'Natriumdampflampe',
     csv: '../../src/data/sodium.csv',
+    color: '#ffa600'  // Intensiv gelb (589 nm Doppel Linie)
   },
   {
     id: 'uv',
     label: 'UV-Lampe',
     csv: '../../src/data/uv_lamp.csv',
+    color: '#5c00ff'  // Violett/Lila - UV ist unsichtbar, dies zeigt die nahbare UV-Violettkante
   },
 ];
 
@@ -262,7 +272,7 @@ async function renderSelectedSpectra() {
     return {
       label: option.label,
       data: normalizedData,  // [{x: 351.9, y: 0.3}, {x: 352.1, y: 0.4}, ...]
-      borderColor: '#6d4aff',
+      borderColor: option.color,
       borderWidth: 2,
       pointRadius: 0,
       fill: false,
