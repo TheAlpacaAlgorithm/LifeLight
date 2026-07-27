@@ -430,3 +430,31 @@ body:has(.app-shell) {
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+.spectrum-choice-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.spectrum-choice-panel__title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0; /* Wichtig: Kein margin, sonst Bruchzeilen */
+}
+
+.spectrum-choice-panel__select-all {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  white-space: nowrap; /* Verhindert Umbruch der Textzeile */
+}
+
+.spectrum-choice-panel__checkbox {
+  accent-color: #6d4aff;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin: 0;
+}
