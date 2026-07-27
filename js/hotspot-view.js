@@ -109,7 +109,7 @@ export function createHotspotView(config) {
 
       if (hotspot.textcard) {
         hotspot.element.style.maxWidth = `${width}px`;
-        hotspot.element.style.maxHeight = '40vh';
+        hotspot.element.style.maxHeight = `${height}px`;
       } else {
         hotspot.element.style.width = `${width}px`;
         hotspot.element.style.height = `${height}px`;
