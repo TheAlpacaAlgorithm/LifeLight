@@ -14,66 +14,81 @@ const VISIBLE_MAX_WAVELENGTH = 780;
 
 let spectrumChart = null;
 const selectedSpectra = new Set();
+let showLifeLight = false;  // Checkbox-Status
+let lifelightData = null;     // Gepufferte CSV-Daten
+
 const spectrumOptions = [
   {
     id: 'sonnenlicht',
     label: 'Sonnenlicht',
     csv: '../../src/data/sun_2.csv',
-    color: '#FFD700'  // Gold - volle Sonne
+    color: '#FFD700'
   },
   {
     id: 'leuchtstoff',
     label: 'Leuchtstoffröhre',
     csv: '../../src/data/leuchtstoff.csv',
-    color: '#ffffff'  // Kühlweiß/Cyan
+    color: '#ffffff'
   },
   {
-    id: 'gluehlampe',
+    id: 'glueh',
     label: 'Glühlampe',
     csv: '../../src/data/glueh.csv',
-    color: '#ffb96f'  // Warmes Orange
+    color: '#ffb96f'
   },
   {
-    id: 'led-warm',
+    id: 'LED_A',
     label: 'LED-Lampe (warmweiß)',
     csv: '../../src/data/led_warm.csv',
-    color: '#ff4500'  // Weicheres Orange als Glühlampe
+    color: '#ff4500'
   },
   {
-    id: 'led-kalt',
+    id: 'LED_B',
     label: 'LED-Lampe (kaltweiß)',
     csv: '../../src/data/led_cold.csv',
-    color: '#76deff'  // Kühlweiß mit leichtem Blaustich
+    color: '#76deff'
   },
   {
     id: 'helium',
     label: 'Heliumlampe',
     csv: '../../src/data/helium.csv',
-    color: '#FF9ECC'  // Rosa/Pink - typische Helium-Gasentladung
+    color: '#FF9ECC'
   },
   {
     id: 'wasserstoff',
     label: 'Wasserstofflampe',
     csv: '../../src/data/hydrogen.csv',
-    color: '#ed48f8'  // Violett/Rosa - Balmer-Serie (H-alpha rot, H-beta blau/grün)
+    color: '#ed48f8'
   },
   {
     id: 'neon',
     label: 'Neonlampe',
     csv: '../../src/data/neon.csv',
-    color: '#FF6B35'  // Klassisches Rot-Orange
+    color: '#FF6B35'
+  },
+  {
+    id: 'argon',
+    label: 'Argonlampe',
+    csv: '../../src/data/argon.csv',
+    color: '#e8b7fc'
   },
   {
     id: 'natrium',
     label: 'Natriumdampflampe',
     csv: '../../src/data/sodium.csv',
-    color: '#ffa600'  // Intensiv gelb (589 nm Doppel Linie)
+    color: '#ffa600'
   },
   {
-    id: 'uv',
+    id: 'quecksilber',
+    label: 'Quecksilberdampflampe',
+    csv: '../../src/data/Hg.csv',
+    color: '#00ffba'
+  },
+  {
+    id: 'UV',
     label: 'UV-Lampe',
     csv: '../../src/data/uv_lamp.csv',
-    color: '#5c00ff'  // Violett/Lila - UV ist unsichtbar, dies zeigt die nahbare UV-Violettkante
+    color: '#5c00ff'
   },
 ];
 
@@ -117,16 +132,29 @@ function buildSpectrumOptionsUI() {
     <div class="spectrum-choice-panel__header">
       <h2 class="spectrum-choice-panel__title">Spektrenauswahl</h2>
       <label class="spectrum-choice-panel__select-all">
-        <input type="checkbox" id="select-all-spectra" class="spectrum-choice-panel__checkbox">
+        <input type="checkbox" id="show-lifelight-checkbox" class="spectrum-choice-panel__checkbox">
         <span>LifeLight-Spektrum zeigen</span>
       </label>
     </div>
     <div class="spectrum-choice-panel__grid">
       ${spectrumOptions.map(renderSpectrumOption).join('')}
     </div>
-  `
+  `;
 
   container.insertAdjacentElement('afterend', wrapper);
+
+  // ✅ Checkbox für LifeLight
+  const lifelightCheckbox = wrapper.querySelector('#show-lifelight-checkbox');
+  lifelightCheckbox?.addEventListener('change', async (event) => {
+    showLifeLight = event.target.checked;
+
+    // LifeLight CSV einmalig laden (oder aus Cache nehmen)
+    if (showLifeLight && !lifelightData) {
+      lifelightData = await parseCSV('../../src/data/lifelight_spectrum.csv');
+    }
+
+    renderSelectedSpectra();
+  });
 
   wrapper.addEventListener('click', (event) => {
     const button = event.target.closest('.spectrum-choice');
@@ -158,7 +186,6 @@ if (document.readyState === 'loading') {
   initializeSpectrumOptions();
 }
 
-// CSV-Parser: Lädt Wellenlänge und Intensität aus CSV (keine Header, Komma-getrennt)
 async function parseCSV(url) {
   try {
     const response = await fetch(url);
@@ -191,7 +218,6 @@ async function parseCSV(url) {
   }
 }
 
-// Farbe aus Wellenlänge berechnen (für visuellen Hintergrund)
 function wavelengthToRGB(wavelength) {
   let R = 0, G = 0, B = 0, alpha = 1;
 
@@ -236,22 +262,14 @@ function wavelengthToRGB(wavelength) {
   };
 }
 
-// Neue Funktion: Lädt alle ausgewählten Spektren aus CSV und rendert im Chart
 async function renderSelectedSpectra() {
   const chartCanvas = document.getElementById('spectrumChart');
   if (!chartCanvas) return;
 
-  const activeIds = Array.from(selectedSpectra);
-
-  if (activeIds.length === 0) {
-    if (spectrumChart) {
-      spectrumChart.data.datasets = [];
-      spectrumChart.update();
-    }
-    return;
-  }
-
   const datasets = [];
+
+  // 1. Normale Spektren (Button-Auswahl)
+  const activeIds = Array.from(selectedSpectra);
   const promises = activeIds.map(async (id) => {
     const option = spectrumOptions.find(o => o.id === id);
     if (!option) return null;
@@ -259,19 +277,15 @@ async function renderSelectedSpectra() {
     const dataPoints = await parseCSV(option.csv);
     if (dataPoints.length === 0) return null;
 
-    // 🔧 NORMALISIERUNG
     const intensities = dataPoints.map(p => p.y);
     const maxIntensity = Math.max(...intensities);
 
-    // 🔧 XY-OBJEKTE statt separat labels + data
-    const normalizedData = dataPoints.map(p => ({
-      x: p.x,
-      y: maxIntensity > 0 ? p.y / maxIntensity : 0
-    }));
-
     return {
       label: option.label,
-      data: normalizedData,  // [{x: 351.9, y: 0.3}, {x: 352.1, y: 0.4}, ...]
+      data: dataPoints.map(p => ({
+        x: p.x,
+        y: maxIntensity > 0 ? p.y / maxIntensity : 0
+      })),
       borderColor: option.color,
       borderWidth: 2,
       pointRadius: 0,
@@ -282,16 +296,47 @@ async function renderSelectedSpectra() {
 
   const results = await Promise.all(promises);
   const validDatasets = results.filter(d => d !== null);
+  datasets.push(...validDatasets);
+
+  // 2. LifeLight-Spektrum (Checkbox)
+  if (showLifeLight) {
+    let dataPoints = lifelightData;
+
+    // Erstmaliges Laden falls noch nicht geschehen
+    if (!dataPoints) {
+      dataPoints = await parseCSV('../../src/data/lifelight-spectrum.csv');
+      lifelightData = dataPoints;
+    }
+
+    if (dataPoints.length > 0) {
+      const intensities = dataPoints.map(p => p.y);
+      const maxIntensity = Math.max(...intensities);
+
+      datasets.push({
+        label: 'LifeLight',
+        data: dataPoints.map(p => ({
+          x: p.x,
+          y: maxIntensity > 0 ? p.y / maxIntensity : 0
+        })),
+        borderColor: '#00d9ff',  // Cyan - hebt sich deutlich ab
+        borderWidth: 3,
+        borderDash: [5, 5],      // Gestrichelt für bessere Unterscheidung
+        pointRadius: 0,
+        fill: false,
+        tension: 0.1
+      });
+    }
+  }
 
   const ctx = chartCanvas.getContext('2d');
 
   if (spectrumChart) {
-    spectrumChart.data.datasets = validDatasets;
+    spectrumChart.data.datasets = datasets;
     spectrumChart.update();
   } else {
     spectrumChart = new Chart(ctx, {
       type: 'line',
-      data: { datasets: validDatasets },  // KEINE labels mehr!
+      data: { datasets },
       options: {
         animation: false,
         responsive: true,
@@ -311,7 +356,7 @@ async function renderSelectedSpectra() {
         },
         scales: {
           x: {
-            type: 'linear',  // Wichtig: linear, NICHT category!
+            type: 'linear',
             grid: { color: 'rgba(255,255,255,0.2)' },
             ticks: { color: 'white', font: { size: 14 } },
             title: {
@@ -343,7 +388,6 @@ async function renderSelectedSpectra() {
   }
 }
 
-// Plugin: Sichtbarer Bereich Hintergrund (visuell unverändert)
 const visibleRangeBackground = {
   id: 'visibleRangeBackground',
   beforeDraw(chart) {
@@ -377,7 +421,6 @@ const visibleRangeBackground = {
   }
 };
 
-// Initialrendering: Bei Seitenstart leeren Chart oder geladene Spektren anzeigen
 setTimeout(() => {
   renderSelectedSpectra();
 }, 100);
