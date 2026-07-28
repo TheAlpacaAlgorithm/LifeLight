@@ -8,37 +8,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19fd556a-a7ab-46c9-bf80-3de97fa0c06b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/js/pages/LED_A_spektrum.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/pages/LED_B_spektrum.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/pages/UV_spektrum.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/pages/argon_spektrum.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/pages/gasentladung.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/pages/glueh_spektrum.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/pages/helium_spektrum.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/pages/metalldampflampen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/pages/natrium_spektrum.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/pages/neon_spektrum.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/pages/quecksilber_spektrum.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/pages/wasserstoff_spektrum.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/pages/weitere-lampen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/subsites/LED_A_spektrum.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/subsites/LED_B_spektrum.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/subsites/UV_spektrum.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/subsites/argon_spektrum.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/subsites/glueh_spektrum.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/subsites/helium_spektrum.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/subsites/natrium_spektrum.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/subsites/neon_spektrum.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/subsites/quecksilber_spektrum.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/subsites/wasserstoff_spektrum.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/pages/deine-spektren.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/pages/deine-spektren.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/red.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/argon.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/uv_lamp.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/uv_lamp.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subsites/gasentladungsroehren.html" beforeDir="false" afterPath="$PROJECT_DIR$/subsites/gasentladungsroehren.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subsites/metalldampflampen.html" beforeDir="false" afterPath="$PROJECT_DIR$/subsites/metalldampflampen.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subsites/weitere-lampen.html" beforeDir="false" afterPath="$PROJECT_DIR$/subsites/weitere-lampen.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/02_Sonnenlicht_CCD-Spektrometer.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/spectra/Sonnenlicht_CCD.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/02_Sonnenlicht_Handspektrometer.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/spectra/Sonnenlicht_Hand.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/pages/weitere-lampen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/pages/weitere-lampen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subsites/LED_A_spektrum.html" beforeDir="false" afterPath="$PROJECT_DIR$/subsites/LED_A_spektrum.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subsites/LED_B_spektrum.html" beforeDir="false" afterPath="$PROJECT_DIR$/subsites/LED_B_spektrum.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subsites/UV_spektrum.html" beforeDir="false" afterPath="$PROJECT_DIR$/subsites/UV_spektrum.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subsites/argon_spektrum.html" beforeDir="false" afterPath="$PROJECT_DIR$/subsites/argon_spektrum.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subsites/glueh_spektrum.html" beforeDir="false" afterPath="$PROJECT_DIR$/subsites/glueh_spektrum.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subsites/helium_spektrum.html" beforeDir="false" afterPath="$PROJECT_DIR$/subsites/helium_spektrum.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subsites/leuchtstoff_spektrum.html" beforeDir="false" afterPath="$PROJECT_DIR$/subsites/leuchtstoff_spektrum.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subsites/natrium_spektrum.html" beforeDir="false" afterPath="$PROJECT_DIR$/subsites/natrium_spektrum.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subsites/neon_spektrum.html" beforeDir="false" afterPath="$PROJECT_DIR$/subsites/neon_spektrum.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subsites/quecksilber_spektrum.html" beforeDir="false" afterPath="$PROJECT_DIR$/subsites/quecksilber_spektrum.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subsites/sonnenlicht_spektrum.html" beforeDir="false" afterPath="$PROJECT_DIR$/subsites/sonnenlicht_spektrum.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subsites/wasserstoff_spektrum.html" beforeDir="false" afterPath="$PROJECT_DIR$/subsites/wasserstoff_spektrum.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,6 +187,7 @@
       <recent name="P:\00 - Wichtige Dokumente\00-Uni\Didaktik\Offene Uni\Apps\LifeLightSeite\subsites" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\richa\Documents\00 - Wichtige Dokumente\00-Uni\Didaktik\Offene Uni\Apps\LifeLightSeite\images\spectra" />
       <recent name="P:\00 - Wichtige Dokumente\00-Uni\Didaktik\Offene Uni\Apps\LifeLightSeite\js\pages" />
     </key>
   </component>
