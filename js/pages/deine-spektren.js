@@ -304,7 +304,7 @@ async function renderSelectedSpectra() {
 
     // Erstmaliges Laden falls noch nicht geschehen
     if (!dataPoints) {
-      dataPoints = await parseCSV('/src/data/lifelight-spectrum.csv');
+      dataPoints = await parseCSV('/src/data/lifelight_spectrum.csv');
       lifelightData = dataPoints;
     }
 
