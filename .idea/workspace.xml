@@ -8,10 +8,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19fd556a-a7ab-46c9-bf80-3de97fa0c06b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/images/spectra/Unconfirmed 616588.crdownload" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/spectra/helium_CCD.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/spectra/natrium_CCD.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/spectra/quecksilber_CCD.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/spectra/wasserstoff_CCD.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/02_Sonnenlicht_CCD-Spektrometer.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/spectra/Sonnenlicht_CCD.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/02_Sonnenlicht_Handspektrometer.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/spectra/Sonnenlicht_Hand.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/pages/weitere-lampen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/pages/weitere-lampen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/pages/gasentladung.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/pages/gasentladung.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/subsites/LED_A_spektrum.html" beforeDir="false" afterPath="$PROJECT_DIR$/subsites/LED_A_spektrum.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/subsites/LED_B_spektrum.html" beforeDir="false" afterPath="$PROJECT_DIR$/subsites/LED_B_spektrum.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/subsites/UV_spektrum.html" beforeDir="false" afterPath="$PROJECT_DIR$/subsites/UV_spektrum.html" afterDir="false" />
@@ -22,7 +25,6 @@
       <change beforePath="$PROJECT_DIR$/subsites/natrium_spektrum.html" beforeDir="false" afterPath="$PROJECT_DIR$/subsites/natrium_spektrum.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/subsites/neon_spektrum.html" beforeDir="false" afterPath="$PROJECT_DIR$/subsites/neon_spektrum.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/subsites/quecksilber_spektrum.html" beforeDir="false" afterPath="$PROJECT_DIR$/subsites/quecksilber_spektrum.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subsites/sonnenlicht_spektrum.html" beforeDir="false" afterPath="$PROJECT_DIR$/subsites/sonnenlicht_spektrum.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/subsites/wasserstoff_spektrum.html" beforeDir="false" afterPath="$PROJECT_DIR$/subsites/wasserstoff_spektrum.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
