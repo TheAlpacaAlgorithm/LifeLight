@@ -10,21 +10,6 @@
     <list default="true" id="19fd556a-a7ab-46c9-bf80-3de97fa0c06b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/pages/deine-spektren.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/pages/deine-spektren.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Hg.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/Hg.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/RGB_screen_spectrum.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/RGB_screen_spectrum.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/argon.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/argon.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/glueh.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/glueh.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/helium.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/helium.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/hydrogen.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/hydrogen.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/led_cold.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/led_cold.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/led_warm.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/led_warm.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/leuchtstoff.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/leuchtstoff.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/lifelight_spectrum.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/lifelight_spectrum.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/neon.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/neon.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/sodium.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/sodium.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/sun_2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/sun_2.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/sunlight_spectrum.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/sunlight_spectrum.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/uv_lamp.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/uv_lamp.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

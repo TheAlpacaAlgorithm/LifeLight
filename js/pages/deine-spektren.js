@@ -21,73 +21,73 @@ const spectrumOptions = [
   {
     id: 'sonnenlicht',
     label: 'Sonnenlicht',
-    csv: '../../data/sun_2.csv',
+    csv: '../data/sun_2.csv',
     color: '#FFD700'
   },
   {
     id: 'leuchtstoff',
     label: 'Leuchtstoffröhre',
-    csv: '../../data/leuchtstoff.csv',
+    csv: '../data/leuchtstoff.csv',
     color: '#ffffff'
   },
   {
     id: 'glueh',
     label: 'Glühlampe',
-    csv: '../../data/glueh.csv',
+    csv: '../data/glueh.csv',
     color: '#ffb96f'
   },
   {
     id: 'LED_A',
     label: 'LED-Lampe (warmweiß)',
-    csv: '../../data/led_warm.csv',
+    csv: '../data/led_warm.csv',
     color: '#ff4500'
   },
   {
     id: 'LED_B',
     label: 'LED-Lampe (kaltweiß)',
-    csv: '../../data/led_cold.csv',
+    csv: '../data/led_cold.csv',
     color: '#76deff'
   },
   {
     id: 'helium',
     label: 'Heliumlampe',
-    csv: '../../data/helium.csv',
+    csv: '../data/helium.csv',
     color: '#FF9ECC'
   },
   {
     id: 'wasserstoff',
     label: 'Wasserstofflampe',
-    csv: '../../data/hydrogen.csv',
+    csv: '../data/hydrogen.csv',
     color: '#ed48f8'
   },
   {
     id: 'neon',
     label: 'Neonlampe',
-    csv: '../../data/neon.csv',
+    csv: '../data/neon.csv',
     color: '#FF6B35'
   },
   {
     id: 'argon',
     label: 'Argonlampe',
-    csv: '../../data/argon.csv',
+    csv: '../data/argon.csv',
     color: '#e8b7fc'
   },
   {
     id: 'natrium',
     label: 'Natriumdampflampe',
-    csv: '../../data/sodium.csv',
+    csv: '../data/sodium.csv',
     color: '#ffa600'
   },
   {
     id: 'quecksilber',
     label: 'Quecksilberdampflampe',
-    csv: '../../data/Hg.csv',
+    csv: '../data/Hg.csv',
     color: '#00ffba'
   },
   {
     id: 'UV',
     label: 'UV-Lampe',
-    csv: '../../data/uv_lamp.csv',
+    csv: '../data/uv_lamp.csv',
     color: '#5c00ff'
   },
 ];
@@ -150,7 +150,7 @@ function buildSpectrumOptionsUI() {
 
     // LifeLight CSV einmalig laden (oder aus Cache nehmen)
     if (showLifeLight && !lifelightData) {
-      lifelightData = await parseCSV('../../data/lifelight_spectrum.csv');
+      lifelightData = await parseCSV('../data/lifelight_spectrum.csv');
     }
 
     renderSelectedSpectra();
@@ -304,7 +304,7 @@ async function renderSelectedSpectra() {
 
     // Erstmaliges Laden falls noch nicht geschehen
     if (!dataPoints) {
-      dataPoints = await parseCSV('../../data/lifelight_spectrum.csv');
+      dataPoints = await parseCSV('../data/lifelight_spectrum.csv');
       lifelightData = dataPoints;
     }
 
