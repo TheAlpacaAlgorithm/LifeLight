@@ -10,6 +10,6 @@ createHotspotView({
     { label: 'Leuchtstoffröhren',      href: 'subsites/leuchtstoffroehren.html',   x: 10, y: 9,  w: 70, h: 10 },
     { label: 'Gasentladungsröhren',   href: 'subsites/gasentladungsroehren.html', x: 38, y: 55, w: 25, h: 7  },
     { label: 'Weitere Lampen',        href: 'subsites/weitere-lampen.html',       x: 74, y: 43, w: 9,  h: 15 },
-    { label: 'Hier geht es zur Auswertung', href: 'subsites/deine-spektren.html', visible: true, x: 45, y: 90, w: 25, h: 5 },
+    { label: 'Zur Analyse gesammelter Spektren', href: 'subsites/deine-spektren.html', visible: true, x: 45, y: 90, w: 25, h: 5 },
   ],
 });
