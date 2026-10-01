@@ -1,11 +1,6 @@
 // js/pages/spektrum-collect.js
 import { isSpectrumCollected, markSpectrumCollected } from './spectrum-progress.js';
 
-/**
- * Fügt einen "Spektrum sammeln"-Button auf der aktuellen Seite hinzu.
- *
- * @param {string} spectrumId – Eindeutige ID für dieses Spektrum ('sonnenlicht', 'leuchtstoff', ...)
- */
 export function setupSpectrumCollection(spectrumId) {
   if (typeof spectrumId !== 'string' || !spectrumId.trim()) {
     throw new TypeError('setupSpectrumCollection benötigt eine gültige spectrumId');

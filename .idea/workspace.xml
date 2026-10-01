@@ -9,7 +9,10 @@
   <component name="ChangeListManager">
     <list default="true" id="19fd556a-a7ab-46c9-bf80-3de97fa0c06b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/pages/deine-spektren.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/pages/deine-spektren.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/hotspot-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/hotspot-view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/spectrum-collect.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/spectrum-collect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subsites/deine-spektren.html" beforeDir="false" afterPath="$PROJECT_DIR$/subsites/deine-spektren.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +26,7 @@
     </persistenceIdMap>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="26" />
+    <option name="cachedIndexableFilesCount" value="95" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -181,7 +184,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-c59985aa861c-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.24374.152" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-WS-261.25134.101" />
       </set>
     </attachedChunks>
   </component>
@@ -195,6 +198,7 @@
       <workItem from="1782298818123" duration="323000" />
       <workItem from="1783956303577" duration="4721000" />
       <workItem from="1784807809184" duration="1254000" />
+      <workItem from="1790846219463" duration="811000" />
     </task>
     <servers />
   </component>

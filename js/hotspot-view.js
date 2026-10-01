@@ -12,7 +12,6 @@ export function createHotspotView(config) {
     return;
   }
 
-  // --- DOM aufbauen ---
   const shell = document.createElement('section');
   shell.className = 'app-shell';
 
@@ -28,7 +27,6 @@ export function createHotspotView(config) {
   shell.append(image, hotspotLayer);
   mount.replaceChildren(shell);
 
-  // --- Hotspot-Elemente erzeugen ---
   const hotspotElements = hotspots.map((hotspot) => {
     let element;
 
@@ -42,7 +40,6 @@ export function createHotspotView(config) {
       element.style.left = '0px';
       element.style.top = '0px';
     } else {
-      // Normaler Hotspot (visible oder invisible)
       element = document.createElement('a');
       element.className = 'hotspot';
       element.href = hotspot.href;
@@ -117,7 +114,6 @@ export function createHotspotView(config) {
     });
   }
 
-  // --- Init & Events ---
   if (image.complete) {
     layoutHotspots();
   } else {

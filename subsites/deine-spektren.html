@@ -5,10 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Spektrum-Auswertung</title>
 
-  <!-- Optional: einfaches CSS -->
   <link rel="stylesheet" href="../css/style.css">
 
-  <!-- Chart.js über CDN (zeigt das Linien-Diagramm) -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1"></script>
   <style>
@@ -36,7 +34,6 @@
     <div class="controls temperature-control">
     </div>
 
-    <!-- Oberer Bereich: Canvas für das Liniendiagramm -->
     <canvas
         id="spectrumChart"
         width="1000"
@@ -55,7 +52,6 @@
     </canvas>
   </div>
 
-  <!-- Haupt-JS (kommt in einem nächsten Schritt) -->
   <script type="module" src="../js/pages/deine-spektren.js"></script>
   <div>
     <div style="display:flex; align-items:center; gap:12px; justify-content:flex-start;">
